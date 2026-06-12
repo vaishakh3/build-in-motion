@@ -7,6 +7,7 @@ import {
   EventFormat,
   FinalCTA,
   Footer,
+  Marquee,
   MediaStoryboard,
   PartnerStrip,
   Prizes,
@@ -24,6 +25,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <PartnerStrip />
         <Concept />
         <Stats />
@@ -36,6 +38,7 @@ export default function Home() {
         <Prizes />
         <WhoShouldApply />
         <MediaStoryboard />
+        <Marquee />
         <FAQ />
         <FinalCTA />
       </main>

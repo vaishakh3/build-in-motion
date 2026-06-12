@@ -65,6 +65,39 @@ export function PartnerStrip() {
   );
 }
 
+export function Marquee() {
+  const items = [
+    "BUILD IN MOTION",
+    "18 JULY 2026",
+    "VYTTILA \u2192 ALUVA \u2192 THRIPPUNITHURA \u2192 VYTTILA",
+    "100 SOLO BUILDERS",
+    "2-HOUR AI SPRINT",
+    "SHIP BEFORE THE PLATFORM",
+  ];
+  const row = [...items, ...items];
+  return (
+    <div
+      aria-hidden
+      className="marquee-mask relative overflow-hidden border-y border-line-cyan/40 bg-night/60 py-4"
+    >
+      <div className="marquee-track flex w-max items-center gap-12">
+        {[0, 1].map((dup) => (
+          <div key={dup} className="flex items-center gap-12">
+            {row.map((item, i) => (
+              <span key={`${dup}-${i}`} className="flex items-center gap-12">
+                <span className="font-mono text-xs tracking-[0.3em] text-cyan/80 whitespace-nowrap">
+                  {item}
+                </span>
+                <span className="h-1.5 w-1.5 rounded-full bg-lime/70" />
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function CoachSchematic() {
   return (
     <svg
@@ -454,6 +487,10 @@ export function FinalCTA() {
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_50%_60%,rgba(0,214,201,0.09),transparent_70%)]"
       />
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <span className="aurora aurora-cyan" />
+        <span className="aurora aurora-blue" />
+      </div>
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <span className="light-streak" style={{ top: "30%", width: "26vw", animationDuration: "9s" }} />
         <span className="light-streak" style={{ top: "65%", width: "20vw", animationDuration: "11s", animationDelay: "3s" }} />

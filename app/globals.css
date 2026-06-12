@@ -172,6 +172,76 @@ body {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(8%, -6%) scale(1.15);
+  }
+  66% {
+    transform: translate(-6%, 5%) scale(0.95);
+  }
+}
+
+.aurora {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: aurora-drift 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.aurora-cyan {
+  width: 38rem;
+  height: 22rem;
+  left: 8%;
+  top: 10%;
+  background: radial-gradient(circle, rgba(0, 214, 201, 0.35), transparent 70%);
+}
+
+.aurora-blue {
+  width: 32rem;
+  height: 20rem;
+  right: 6%;
+  bottom: 8%;
+  background: radial-gradient(circle, rgba(91, 124, 255, 0.3), transparent 70%);
+  animation-delay: -9s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none;
+  }
+}
+
 @keyframes route-draw {
   from {
     stroke-dashoffset: var(--route-len, 1000);

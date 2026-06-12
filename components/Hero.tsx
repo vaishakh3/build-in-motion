@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   APPLY_LINK,
@@ -12,6 +13,8 @@ import {
 } from "@/lib/content";
 import { MagneticButton } from "./ui";
 
+const MetroScene = dynamic(() => import("./three/MetroScene"), { ssr: false });
+
 const streaks = [
   { top: "18%", delay: 0, duration: 7, width: "32vw" },
   { top: "31%", delay: 2.4, duration: 9, width: "22vw" },
@@ -20,10 +23,12 @@ const streaks = [
   { top: "80%", delay: 3.0, duration: 7.5, width: "26vw" },
 ];
 
-function HeroBackdrop() {
+function HeroBackdrop({ reduced }: { reduced: boolean }) {
   return (
     <div aria-hidden className="absolute inset-0 overflow-hidden">
       <div className="route-grid absolute inset-0" />
+      <MetroScene reduced={reduced} />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_45%,rgba(5,7,10,0.55),rgba(5,7,10,0.15)_60%,transparent)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_35%,rgba(0,214,201,0.08),transparent_70%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_75%_70%,rgba(91,124,255,0.07),transparent_70%)]" />
       {streaks.map((s, i) => (
@@ -141,7 +146,7 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pt-28 pb-16 text-center"
     >
-      <HeroBackdrop />
+      <HeroBackdrop reduced={!!reduced} />
       <div className="relative z-10 mx-auto max-w-4xl">
         <motion.p
           {...stagger(0)}
