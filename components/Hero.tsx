@@ -190,7 +190,7 @@ export default function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href={APPLY_LINK}
-                className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#9af5ec] to-[#27ddcf] px-7 py-4 font-display text-sm font-bold tracking-[0.12em] text-[#04201d] uppercase shadow-[0_0_45px_rgba(0,214,201,0.3)] transition-transform duration-200 hover:scale-[1.02]"
+                className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#a6f7ee] to-[#16e0d0] px-7 py-4 font-display text-sm font-bold tracking-[0.08em] text-[#03201d] uppercase shadow-[0_0_45px_rgba(22,224,208,0.3)] transition-transform duration-200 hover:scale-[1.02]"
               >
                 Apply to Build
                 <svg
