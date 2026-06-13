@@ -263,3 +263,32 @@ body {
     stroke-dashoffset: 0;
   }
 }
+
+.hero-glow {
+  text-shadow:
+    0 0 36px rgba(0, 214, 201, 0.5),
+    0 0 90px rgba(0, 214, 201, 0.28);
+}
+
+@keyframes hero-scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 0.35;
+  }
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll-dot 1.7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-dot {
+    animation: none;
+  }
+}

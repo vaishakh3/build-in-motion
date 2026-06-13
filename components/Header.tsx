@@ -2,14 +2,35 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { APPLY_LINK, EVENT_NAME } from "@/lib/content";
+import { APPLY_LINK } from "@/lib/content";
 
 const navLinks = [
   { label: "Concept", href: "#concept" },
   { label: "Route", href: "#route" },
   { label: "Schedule", href: "#schedule" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Tracks", href: "#tracks" },
+  { label: "Apply", href: APPLY_LINK },
 ];
+
+function LogoMark() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 48 32"
+      className="h-7 w-10 shrink-0"
+      fill="none"
+    >
+      <path
+        d="M3 28 L15 6 L24 19 L33 6 L45 28"
+        stroke="#00d6c9"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ filter: "drop-shadow(0 0 6px rgba(0,214,201,0.6))" }}
+      />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,33 +49,27 @@ export default function Header() {
         scrolled ? "glass border-b border-line bg-deep/80" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
-        <a
-          href="#top"
-          className="font-display text-base font-bold tracking-tight text-ink"
-        >
-          {EVENT_NAME}
-          <span className="ml-2 hidden font-mono text-[10px] tracking-[0.25em] text-cyan sm:inline">
-            BiM·26
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-[72px] md:px-10">
+        <a href="#top" className="flex items-center gap-3">
+          <LogoMark />
+          <span className="font-display text-base font-bold tracking-[0.22em] text-ink uppercase">
+            Build in Motion
           </span>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+        <nav
+          aria-label="Primary"
+          className="hidden items-center gap-9 md:flex"
+        >
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-ink-2 transition-colors hover:text-ink"
+              className="font-display text-[13px] font-bold tracking-[0.18em] text-ink/90 uppercase transition-colors hover:text-cyan"
             >
               {l.label}
             </a>
           ))}
-          <a
-            href={APPLY_LINK}
-            className="rounded-full border border-cyan/40 bg-cyan/10 px-5 py-2 font-display text-sm font-semibold text-cyan transition-colors hover:bg-cyan/20"
-          >
-            Apply to Build
-          </a>
         </nav>
 
         <button
@@ -93,18 +108,11 @@ export default function Header() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-3 text-sm text-ink-2 transition-colors hover:bg-white/5 hover:text-ink"
+                  className="rounded-lg px-3 py-3 font-display text-sm font-bold tracking-[0.16em] text-ink-2 uppercase transition-colors hover:bg-white/5 hover:text-ink"
                 >
                   {l.label}
                 </a>
               ))}
-              <a
-                href={APPLY_LINK}
-                onClick={() => setOpen(false)}
-                className="mt-2 rounded-full border border-cyan/40 bg-cyan/10 px-5 py-3 text-center font-display text-sm font-semibold text-cyan"
-              >
-                Apply to Build
-              </a>
             </div>
           </motion.nav>
         )}
