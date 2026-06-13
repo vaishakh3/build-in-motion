@@ -106,35 +106,35 @@ function CoachSchematic() {
       aria-label="Schematic of a metro coach set up as a build lab with builder seats, a mentor zone, and a media zone along the route line"
       className="w-full"
     >
-      <rect x="10" y="30" width="400" height="170" rx="36" fill="#08111F" stroke="rgba(0,214,201,0.25)" strokeWidth="1.5" />
-      <line x1="10" y1="115" x2="410" y2="115" stroke="rgba(0,214,201,0.18)" strokeWidth="1" strokeDasharray="6 6" />
+      <rect x="10" y="30" width="400" height="170" rx="36" fill="#0A131F" stroke="rgba(22,224,208,0.25)" strokeWidth="1.5" />
+      <line x1="10" y1="115" x2="410" y2="115" stroke="rgba(22,224,208,0.18)" strokeWidth="1" strokeDasharray="6 6" />
       {[60, 130, 200, 270, 340].map((x) => (
-        <rect key={`w${x}`} x={x} y="42" width="40" height="16" rx="6" fill="rgba(91,124,255,0.12)" stroke="rgba(91,124,255,0.3)" strokeWidth="1" />
+        <rect key={`w${x}`} x={x} y="42" width="40" height="16" rx="6" fill="rgba(139,147,255,0.12)" stroke="rgba(139,147,255,0.3)" strokeWidth="1" />
       ))}
       {[
         [55, 80], [115, 80], [175, 80], [235, 80], [295, 80], [355, 80],
         [55, 150], [115, 150], [175, 150], [295, 150], [355, 150],
       ].map(([x, y], i) => (
         <g key={i}>
-          <rect x={x - 14} y={y} width="28" height="22" rx="6" fill="rgba(0,214,201,0.08)" stroke="rgba(0,214,201,0.35)" strokeWidth="1" />
-          <rect x={x - 8} y={y + 5} width="16" height="9" rx="2" fill="#00D6C9" opacity="0.7">
+          <rect x={x - 14} y={y} width="28" height="22" rx="6" fill="rgba(22,224,208,0.08)" stroke="rgba(22,224,208,0.35)" strokeWidth="1" />
+          <rect x={x - 8} y={y + 5} width="16" height="9" rx="2" fill="#16E0D0" opacity="0.7">
             <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.6s" begin={`${i * 0.3}s`} repeatCount="indefinite" />
           </rect>
         </g>
       ))}
       <g>
-        <rect x="221" y="150" width="28" height="22" rx="6" fill="rgba(183,242,65,0.08)" stroke="rgba(183,242,65,0.4)" strokeWidth="1" />
-        <text x="235" y="165" textAnchor="middle" fontSize="9" fill="#B7F241" fontFamily="var(--font-jetbrains)">M</text>
+        <rect x="221" y="150" width="28" height="22" rx="6" fill="rgba(201,242,94,0.08)" stroke="rgba(201,242,94,0.4)" strokeWidth="1" />
+        <text x="235" y="165" textAnchor="middle" fontSize="9" fill="#C9F25E" fontFamily="var(--font-plex-mono)">M</text>
       </g>
-      <text x="40" y="222" fontSize="10" fill="#6F7A8C" fontFamily="var(--font-jetbrains)">BUILDER SEATS</text>
-      <text x="200" y="222" fontSize="10" fill="#B7F241" fontFamily="var(--font-jetbrains)">MENTOR ZONE</text>
-      <text x="330" y="222" fontSize="10" fill="#FFB454" fontFamily="var(--font-jetbrains)">MEDIA</text>
-      <circle cx="385" cy="190" r="7" fill="none" stroke="#FFB454" strokeWidth="1.5" />
-      <circle cx="385" cy="190" r="2.5" fill="#FFB454" />
-      <line x1="30" y1="14" x2="390" y2="14" stroke="#00D6C9" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-      <circle cx="30" cy="14" r="4" fill="#05070A" stroke="#00D6C9" strokeWidth="1.5" />
-      <circle cx="210" cy="14" r="4" fill="#05070A" stroke="#00D6C9" strokeWidth="1.5" />
-      <circle cx="390" cy="14" r="4" fill="#05070A" stroke="#00D6C9" strokeWidth="1.5" />
+      <text x="40" y="222" fontSize="10" fill="#6E7A8B" fontFamily="var(--font-plex-mono)">BUILDER SEATS</text>
+      <text x="200" y="222" fontSize="10" fill="#C9F25E" fontFamily="var(--font-plex-mono)">MENTOR ZONE</text>
+      <text x="330" y="222" fontSize="10" fill="#FFC066" fontFamily="var(--font-plex-mono)">MEDIA</text>
+      <circle cx="385" cy="190" r="7" fill="none" stroke="#FFC066" strokeWidth="1.5" />
+      <circle cx="385" cy="190" r="2.5" fill="#FFC066" />
+      <line x1="30" y1="14" x2="390" y2="14" stroke="#16E0D0" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+      <circle cx="30" cy="14" r="4" fill="#04070C" stroke="#16E0D0" strokeWidth="1.5" />
+      <circle cx="210" cy="14" r="4" fill="#04070C" stroke="#16E0D0" strokeWidth="1.5" />
+      <circle cx="390" cy="14" r="4" fill="#04070C" stroke="#16E0D0" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -485,7 +485,7 @@ export function FinalCTA() {
     <Section className="relative overflow-hidden text-center">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_50%_60%,rgba(0,214,201,0.09),transparent_70%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_50%_60%,rgba(22,224,208,0.09),transparent_70%)]"
       />
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <span className="aurora aurora-cyan" />
@@ -498,9 +498,9 @@ export function FinalCTA() {
       <div className="relative z-10">
         <Reveal>
           <svg aria-hidden viewBox="0 0 400 40" className="mx-auto mb-10 w-64">
-            <path d="M10 20 H 330" stroke="#00D6C9" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-            <circle cx="10" cy="20" r="4" fill="#05070A" stroke="#00D6C9" strokeWidth="2" />
-            <rect x="344" y="8" width="10" height="24" fill="#00D6C9">
+            <path d="M10 20 H 330" stroke="#16E0D0" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+            <circle cx="10" cy="20" r="4" fill="#04070C" stroke="#16E0D0" strokeWidth="2" />
+            <rect x="344" y="8" width="10" height="24" fill="#16E0D0">
               <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite" />
             </rect>
           </svg>

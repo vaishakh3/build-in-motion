@@ -73,7 +73,7 @@ function DesktopRoute() {
               y1="70"
               x2={PATH_END}
               y2="70"
-              stroke="#00D6C9"
+              stroke="#16E0D0"
               strokeWidth="3"
               strokeLinecap="round"
               style={{
@@ -90,8 +90,8 @@ function DesktopRoute() {
                     cx={s.x}
                     cy="70"
                     r="10"
-                    fill="#05070A"
-                    stroke={reached ? "#00D6C9" : "rgba(255,255,255,0.2)"}
+                    fill="#04070C"
+                    stroke={reached ? "#16E0D0" : "rgba(255,255,255,0.2)"}
                     strokeWidth="2.5"
                     style={{ transition: "stroke 0.5s" }}
                   />
@@ -99,7 +99,7 @@ function DesktopRoute() {
                     cx={s.x}
                     cy="70"
                     r="4"
-                    fill={reached ? "#00D6C9" : "rgba(255,255,255,0.15)"}
+                    fill={reached ? "#16E0D0" : "rgba(255,255,255,0.15)"}
                     style={{ transition: "fill 0.5s" }}
                   />
                   <text
@@ -107,8 +107,8 @@ function DesktopRoute() {
                     y={i % 2 === 0 ? 110 : 40}
                     textAnchor="middle"
                     fontSize="13"
-                    fill={reached ? "#A8B3C4" : "#6F7A8C"}
-                    fontFamily="var(--font-jetbrains)"
+                    fill={reached ? "#A6B2C2" : "#6E7A8B"}
+                    fontFamily="var(--font-plex-mono)"
                     letterSpacing="2"
                   >
                     {s.name}
@@ -124,12 +124,12 @@ function DesktopRoute() {
                   width="32"
                   height="24"
                   rx="8"
-                  fill="#0B1220"
-                  stroke="#B7F241"
+                  fill="#0C1422"
+                  stroke="#C9F25E"
                   strokeWidth="2"
                 />
-                <rect x={PATH_START - 9} y="64" width="6" height="5" rx="1.5" fill="#B7F241" />
-                <rect x={PATH_START + 3} y="64" width="6" height="5" rx="1.5" fill="#B7F241" />
+                <rect x={PATH_START - 9} y="64" width="6" height="5" rx="1.5" fill="#C9F25E" />
+                <rect x={PATH_START + 3} y="64" width="6" height="5" rx="1.5" fill="#C9F25E" />
               </motion.g>
             )}
           </svg>

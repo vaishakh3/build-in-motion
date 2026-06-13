@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #05070a;
-  --bg-night: #071018;
-  --bg-panel: #08111f;
-  --bg-card: #0b1220;
-  --cyan: #00d6c9;
-  --cyan-dim: #00bfb8;
-  --blue: #5b7cff;
-  --blue-soft: #6c8cff;
-  --lime: #b7f241;
-  --amber: #ffb454;
-  --text-primary: #f5f7fa;
-  --text-secondary: #a8b3c4;
-  --text-muted: #6f7a8c;
+  --bg-deep: #04070c;
+  --bg-night: #070e16;
+  --bg-panel: #0a131f;
+  --bg-card: #0c1422;
+  --cyan: #16e0d0;
+  --cyan-dim: #0fbdb0;
+  --blue: #8b93ff;
+  --blue-soft: #a2a8ff;
+  --lime: #c9f25e;
+  --amber: #ffc066;
+  --text-primary: #f4f7fb;
+  --text-secondary: #a6b2c2;
+  --text-muted: #6e7a8b;
   --border-soft: rgba(255, 255, 255, 0.1);
-  --border-cyan: rgba(0, 214, 201, 0.25);
+  --border-cyan: rgba(22, 224, 208, 0.26);
 }
 
 @theme inline {
@@ -34,9 +34,9 @@
   --color-ink-3: var(--text-muted);
   --color-line: var(--border-soft);
   --color-line-cyan: var(--border-cyan);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-grotesk);
-  --font-mono: var(--font-jetbrains);
+  --font-sans: var(--font-inter-tight);
+  --font-display: var(--font-sora);
+  --font-mono: var(--font-plex-mono);
 }
 
 html {
@@ -57,14 +57,27 @@ html {
 }
 
 body {
-  background: var(--bg-deep);
+  background:
+    radial-gradient(
+      1200px 820px at 78% -12%,
+      rgba(22, 224, 208, 0.07),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 720px at 8% 112%,
+      rgba(139, 147, 255, 0.05),
+      transparent 60%
+    ),
+    var(--bg-deep);
   color: var(--text-primary);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  letter-spacing: -0.011em;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(0, 214, 201, 0.3);
+  background: rgba(22, 224, 208, 0.3);
   color: var(--text-primary);
 }
 
@@ -92,10 +105,10 @@ body {
 }
 
 .glass {
-  background: rgba(8, 17, 31, 0.6);
+  background: rgba(7, 14, 24, 0.62);
   border: 1px solid var(--border-soft);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 
 .card {
@@ -158,8 +171,8 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 214, 201, 0.55),
-    rgba(91, 124, 255, 0.45),
+    rgba(22, 224, 208, 0.55),
+    rgba(139, 147, 255, 0.45),
     transparent
   );
   animation: streak linear infinite;
@@ -224,7 +237,7 @@ body {
   height: 22rem;
   left: 8%;
   top: 10%;
-  background: radial-gradient(circle, rgba(0, 214, 201, 0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(22, 224, 208, 0.35), transparent 70%);
 }
 
 .aurora-blue {
@@ -232,7 +245,7 @@ body {
   height: 20rem;
   right: 6%;
   bottom: 8%;
-  background: radial-gradient(circle, rgba(91, 124, 255, 0.3), transparent 70%);
+  background: radial-gradient(circle, rgba(139, 147, 255, 0.3), transparent 70%);
   animation-delay: -9s;
 }
 
@@ -261,5 +274,34 @@ body {
   .route-draw {
     animation: none;
     stroke-dashoffset: 0;
+  }
+}
+
+.hero-glow {
+  text-shadow:
+    0 0 36px rgba(22, 224, 208, 0.5),
+    0 0 90px rgba(22, 224, 208, 0.28);
+}
+
+@keyframes hero-scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 0.35;
+  }
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll-dot 1.7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-dot {
+    animation: none;
   }
 }
